@@ -24,11 +24,39 @@ describe('Ticket', function() {
         var movie1 = {name:'Mad Max', baseprice: '9', show_times: ['2:00','4:00','7:45','9:45']};
         var movie2 = {name:"Furry Road", baseprice: "12",  show_times: ['3:00','5:00','8:45','10:30']};
 
-        var testTicket = new Ticket(movie1,movie1.baseprice, true);
+        var testTicket = new Ticket(movie1,movie1.baseprice);
 
-        testTicket.seniorDiscount();
+        testTicket.seniorDiscount(true);
 
         expect(testTicket.ticketprice).to.equal(4.5);
+    });
+
+    it("returns senior discount if discount is toggled", function() {
+
+        var movie1 = {name:'Mad Max', baseprice: '9', show_times: ['2:00','4:00','7:45','9:45']};
+        var movie2 = {name:"Furry Road", baseprice: "12",  show_times: ['3:00','5:00','8:45','10:30']};
+
+        var testTicket = new Ticket(movie1,movie1.baseprice);
+
+        testTicket.seniorDiscount(true);
+        testTicket.seniorDiscount(false);
+
+        expect(testTicket.ticketprice).to.equal(9);
+    });
+
+    //baseprice prototype
+    it("returns price adjusted by whether matinee is true", function() {
+
+        var movie1 = {name:'Mad Max', baseprice: '9', show_times: ['2:00','4:00','7:45','9:45']};
+        var movie2 = {name:"Furry Road", baseprice: "12",  show_times: ['3:00','5:00','8:45','10:30']};
+
+        var testTicket = new Ticket(movie1,movie1.baseprice, true);
+
+    //    testTicket.seniorDiscount();
+
+            testTicket.matineePrice(true)
+
+        expect(testTicket.ticketprice).to.equal(5);
     });
 
 

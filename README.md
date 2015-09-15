@@ -1,9 +1,9 @@
-# _Address Book Exercises in Javascript_
+# _Movie Ticket app_
 
 ### By Mike Chastain and Adam Won
 
 ## Description
-_[Live Demo ] (http://umamimike.github.io/Ep-Js-Address-Book/)_
+_Clone and open index into browser._
 
 ## Technologies Used
 _This project makes use of: [Mocha](https://mochajs.org/), and [Chai](http://chaijs.com/) as testing-frameworks. And has a dependency for jQuery._
